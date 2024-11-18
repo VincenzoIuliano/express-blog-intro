@@ -37,14 +37,17 @@ const posts = [
     },
 ]
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/', (req,res) => {
     res.send('Server del mio blog!')
 }) 
 
 app.get('/bacheca',(req,res) => {
-    res.json(posts)
+    res.json({
+        posts,
+        count: posts.length,
+    })
 })
 
 app.listen(port, () => {
