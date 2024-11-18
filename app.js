@@ -14,7 +14,7 @@ const posts = [
     {
         title: 'Cracker alla barbabietola!',
         content: 'Oggi ho provato un nuovo esperimento, dei cracker alla barbabietola. Non una grande esperienza!',
-        image: '"public/images/cracker_barbabietola.jpeg"',
+        image: 'public/images/cracker_barbabietola.jpeg',
         tags: ['food','home','sad','tasty','wrong','choice'],
     },
     {
@@ -37,6 +37,8 @@ const posts = [
     },
 ]
 
+app.use(express.static('public'))
+
 app.get('/', (req,res) => {
     res.send('Server del mio blog!')
 }) 
@@ -49,4 +51,3 @@ app.listen(port, () => {
     console.log(`Server listening on port: ${port}`);
 })
 
-// console.log(posts);
